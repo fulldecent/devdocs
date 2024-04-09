@@ -38,7 +38,7 @@ const remarkPlugins = [
 const isDeployPreview = !!process.env.NETLIFY && process.env.CONTEXT === 'deploy-preview';
 
 const getBaseUrl = () => {
-    if (process.env.NETLIFY) {
+    if (process.env.NETLIFY || process.env.CLOUDFLARE) {
         // Netlify hosts on '/', always.
         return '/';
     }
